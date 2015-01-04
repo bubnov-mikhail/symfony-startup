@@ -8,7 +8,7 @@ class UsersControllerTest extends LoginFormBase
 {
     public function testRegistrationExist()
     {
-        $crawler = $this->client->request('GET', $this->container->get('router')->generate('_index'));
+        $crawler = $this->client->request('GET', $this->container->get('router')->generate('index'));
         $this->assertCount(
                 1,
                 $crawler->filter('a#registration'),
@@ -51,12 +51,6 @@ class UsersControllerTest extends LoginFormBase
                 0,
                 $crawler->filter('div.alert.alert-info')->count(),
                 'Ожидалась нотификация об успешной регистрации'
-                );
-
-        $this->assertCount(
-                1,
-                $crawler->filter('a#cabinet'),
-                'Ожидалась ссылка на кабинет'
                 );
 
         return $crawler;
@@ -103,13 +97,7 @@ class UsersControllerTest extends LoginFormBase
         $this->assertCount(
                 0,
                 $crawler->filter('div.alert.alert-danger'),
-                'Ожидалась успешная регистрация'
-                );
-
-        $this->assertCount(
-                1,
-                $crawler->filter('a#cabinet'),
-                'Ожидалась ссылка на кабинет'
+                'Ожидался успешный вход'
                 );
     }
 
@@ -119,7 +107,7 @@ class UsersControllerTest extends LoginFormBase
      */
     private function prepareRegistrationForm()
     {
-        $crawler = $this->client->request('GET', $this->container->get('router')->generate('_index'));
+        $crawler = $this->client->request('GET', $this->container->get('router')->generate('index'));
 
         $regLink = $crawler->filter('a#registration')->eq(0)->link();
         $crawler = $this->client->click($regLink);
