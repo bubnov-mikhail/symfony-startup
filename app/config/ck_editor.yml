@@ -1,0 +1,15 @@
+ivory_ck_editor:
+    enable: true
+    default_config: default
+    configs:
+        default:
+            toolbar: [{ name: 'default_toolbar', items: [ 'Source', '-', 'PasteFromWord', '-', 'Bold', 'Italic', 'RemoveFormat','-', 'Blockquote', '-', 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock','Link', 'Unlink', 'Image','Table', 'strinsert']}]
+            filebrowserBrowseRoute: elfinder
+            extraPlugins: 'autogrow'
+
+fm_elfinder:
+    editor: ckeditor
+    connector:
+        roots:
+            uploads:
+                path: uploads

@@ -1,0 +1,10 @@
+{% extends 'AppDefaultBundle::base.html.twig' %}
+
+{% block title %}{{ 'common.errors.unknown_error' | trans }}{% endblock %}
+
+{% block content %}
+    <div class="alert alert-error">
+        <h1>{{ 'common.errors.unknown_error' | trans }}</h1>
+        <p>{{ exception.message|e|replace({"\n": '<br />'})|format_file_from_text | trans }}</p>
+    </div>
+{% endblock %}

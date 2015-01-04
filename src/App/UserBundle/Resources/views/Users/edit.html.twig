@@ -1,0 +1,13 @@
+{% form_theme form 'AppDefaultBundle:Form:form_row.html.twig' %}
+<h2 class="modal-title">{{ 'sitebeat.cabinet.accaunt' | trans }}: {{ user.name }}</h2>
+<div class="modal-dialog pull-left">
+{{ form_start(form) }}
+
+{{ form_widget(form) }}
+
+<div class="submit_btns hidden">
+    <input type="submit" id="_submit" name="_submit" value="{{ 'common.save'| trans }}" class="btn btn-success btn-lg" />
+    <input type="button" id="cancel" name="cancel" value="{{ 'common.cancel'| trans }}" class="btn btn-default btn-lg" onclick="window.location='{{ path('index') }}'"/>
+</div>
+{{ form_end(form) }}
+</div>

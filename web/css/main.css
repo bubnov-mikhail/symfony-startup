@@ -1,0 +1,17 @@
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    width: 1280px;
+}
+
+.loading {
+    background-image: url("../img/ajax-loader-small.gif");
+    display: block;
+    width:16px;
+    height: 16px;
+    margin:5px;
+}
+
+#footer {
+    height:40px;
+}

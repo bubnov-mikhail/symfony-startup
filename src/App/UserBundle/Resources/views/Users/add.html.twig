@@ -1,0 +1,12 @@
+{% extends 'AppDefaultBundle::base.html.twig' %}
+{% form_theme form 'AppDefaultBundle:Form:form_row.html.twig' %}
+
+{% block title %}Добавление пользователя{% endblock %}
+
+{% block content %}
+    <form action="{{ path('user_create') }}">
+        {{ form_widget(form) }}
+        <input type="submit" value="Добавить" class="btn btn-success">
+        <a href="{{ path('user_list') }}" class="cancel-link">Отмена</a>
+    </form>
+{% endblock %}

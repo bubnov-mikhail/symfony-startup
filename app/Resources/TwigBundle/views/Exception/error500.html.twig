@@ -1,0 +1,10 @@
+{% extends 'AppDefaultBundle::base.html.twig' %}
+
+{% block title %}{{ 'common.errors.server_error' | trans }}{% endblock %}
+
+{% block content %}
+    <div class="alert alert-error">
+        <h1>{{ 'common.errors.server_error' | trans }}</h1>
+        <p>{{ status_text | trans }}</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+web/bundles/*
+web/compiled/*
+web/assetic/*
+app/cache/*
+app/*.cache
+*~
+app/config/parameters.yml
+app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+vendor
+bin/*
+!bin/makels
+!bin/autotest
+!bin/test
+composer.phar
+nbproject

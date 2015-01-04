@@ -1,0 +1,13 @@
+{% extends 'AppDefaultBundle::base.html.twig' %}
+{% form_theme form 'AppDefaultBundle:Form:form_row.html.twig' %}
+
+{% block title %}Удаление пользователя{% endblock %}
+
+{% block content %}
+    Вы точно хотите удалить пользователя: {{ user.name }}?
+    <form action="" method="post">
+        {{ form_widget(form) }}
+        <button type="submit" class="btn btn-danger">Удалить</button>
+        <a href="{{ path('user_list') }}" class="cancel-link">Отмена</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'AppDefaultBundle::base.html.twig' %}
+
+{% block title %}{{ 'common.errors.page_not_found' | trans }}{% endblock %}
+
+{% block content %}
+    <div class="alert alert-error">
+        <h1>{{ 'common.errors.page_not_found' | trans }}</h1>
+        <p>{{ exception.message|e|replace({"\n": '<br />'})|format_file_from_text | trans }}</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "AppUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+<div class="modal-dialog">
+    <div class="modal-content">
+      <form class="form-signin" action="{{ path("fos_user_security_check") }}" method="post">
+        <div class="modal-header">
+          <h2 class="modal-title">{{ 'layout.login' | trans({}, 'FOSUserBundle') }}</h2>
+        </div>
+        <div class="modal-body">
+          {% if error %}
+          <div class="alert alert-danger">
+              <strong>{{ 'common.error'| trans }}:</strong> {{ error.messageKey|trans(error.messageData, 'security') }}
+          </div>
+          {% endif %}
+          <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+          <div class="form-group">
+              <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="form-control" placeholder="{{ 'security.login.username'| trans({}, 'FOSUserBundle')}}" />
+          </div>
+          <div class="form-group">
+              <input type="password" id="password" name="_password" required="required" class="form-control" placeholder="{{ 'security.login.password'| trans({}, 'FOSUserBundle')}}" />
+          </div>
+          <label class="checkbox">
+              <input type="checkbox" id="remember_me" name="_remember_me" value="on" /> {{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}
+          </label>
+        </div>
+        <div class="modal-footer">
+          <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'| trans({}, 'FOSUserBundle') }}" class="btn btn-primary btn-lg" />
+          <input type="button" id="cancel" name="cancel" value="{{ 'common.cancel'| trans }}" class="btn btn-warning btn-lg" onclick="'{{ path('index') }}'"/>
+        </div>
+      </form>
+    </div><!-- /.modal-content -->
+</div>
+
+{% endblock fos_user_content %}

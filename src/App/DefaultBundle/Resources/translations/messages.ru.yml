@@ -1,0 +1,39 @@
+common:
+    save: Сохранить
+    cancel: Отмена
+    add: Добавить
+    add_many: Добавить несколько
+    add_many_tip: '<h3>Добавление списка элементов</h3><p>Укажите список элементов, разделяя их построчно или через запятую</p>'
+    error: Ошибка
+    password: Пароль
+    password_new: Новый пароль (если требуется)
+    email: Email
+    count: раз(а)
+    username_to_login: Имя пользователя для входа в систему
+    profile:
+        updated: Профиль пользователя обновлен
+    your_name: Ваше имя
+    edit: Редактировать
+    on_page: На странице
+    delete: Удалить
+    date: Дата
+    time: Время
+    result: Результат
+    details: Подробности
+    details_empty: Подробностей нет
+    show_diff: Смотреть разницу
+    show_it: Показать больше
+    hide_it: Скрыть
+    loading: Загрузка
+    line: Строка
+    login: Логин
+    errors:
+        unknown_error: Неизвестная ошибка
+        page_not_found: Страница не найдена
+        access_denied: Доступ запрещен
+        server_error: Ошибка сервера
+        form_error: Форма заполнена неверно
+        wrong_old_password: Старый пароль введен неверно
+        password_to_short: Пароль должен быть не менее 4 символов
+old_version: Эталонный образец
+new_version: Текущая версия

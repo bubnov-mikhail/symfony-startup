@@ -1,0 +1,5 @@
+#!/bin/bash
+#create ls to autogrow plugin
+#create ls to strinsert
+ln -nfs ../../../../../shared/web/bundles/ivoryckeditor/plugins/autogrow ./../current/web/bundles/ivoryckeditor/plugins/autogrow
+ln -nfs ../../../../../shared/web/bundles/ivoryckeditor/plugins/strinsert ./../current/web/bundles/ivoryckeditor/plugins/strinsert

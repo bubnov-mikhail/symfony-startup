@@ -1,0 +1,44 @@
+{% block form_row %}
+<div class="form-group">
+    {{ form_label(form) }}
+    {% if form_errors(form) %}
+    <div class="alert alert-danger">
+        {{ form_errors(form) }}
+    </div>
+    {% endif %}
+    
+    {% if form.vars.block_prefixes.1 == 'collection' %}
+        <table class="table table-striped collection-holder" {% if form.vars.allow_add %}data-prototype="{% filter escape %}<tr>{% for field_proto in form.vars.prototype %}<td {% if field_proto.vars.name == 'allowDelete' %}class="hidden"{% endif %}>{{ form_row(field_proto) }}</td>{% endfor %}<td width='5'>{% if form.vars.allow_delete %}<a href='' class='collection-delete' target='#{{ form.vars.id }}'><i class='icon-trash'></i></a>{% endif %}</td></tr>{% endfilter %}"{% endif %} id="{{ form.vars.id }}">
+            <tbody>
+            {% for element in form %}
+                <tr>
+                    {% for field in element %}
+                        <td {% if field.vars.name == 'allowDelete' %}class="hidden"{% endif %}>
+                            {{ form_row(field, {'attr': {'class': 'form-control'} }) }}
+                        </td>
+                    {% endfor %}
+                    <td width="5">
+                    {% if form.vars.allow_delete and (element.vars.value.allowDelete is not defined or element.vars.value.allowDelete == 1)%}
+                            <a href="" class="collection-delete" target="#{{ form.vars.id }}">
+                                <i class="icon-trash"></i>
+                            </a>
+                    {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        
+        {% if form.vars.allow_add %}
+            <input type="button" id="{{ form.vars.full_name }}_add" name="{{ form.vars.full_name }}_add" value="{{ 'common.add'| trans }}" class="btn btn-primary collection-add" target="#{{ form.vars.id }}"/>   
+        {% endif %}
+        
+        {% if form.vars.attr['allow_add_many'] is defined and form.vars.attr['allow_add_many'] %}
+            <input type="button" id="{{ form.vars.full_name }}_add_many" name="{{ form.vars.full_name }}_add_many" value="{{ 'common.add_many'| trans }}" class="btn btn-primary collection-add-many tooltip-able" target="#{{ form.vars.id }}" title="{{ 'common.add_many_tip' | trans }}" role="button" data-toggle="modal" data-backdrop="static" data-target="#addManyModal"/>   
+        {% endif %}
+        
+    {% else %}
+        {{ form_widget(form, {'attr': {'class': 'form-control'} }) }}
+    {% endif %}
+</div>
+{% endblock form_row %}
