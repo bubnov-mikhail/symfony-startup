@@ -25,7 +25,7 @@ class LoginFormBase extends WebTestCase
      */
     protected function login($username = null, $password = null)
     {
-        $crawler = $this->client->request('GET', $this->container->get('router')->generate('_index'));
+        $crawler = $this->client->request('GET', $this->container->get('router')->generate('index'));
         $this->assertCount(
                 1,
                 $crawler->filter('a#login'),
