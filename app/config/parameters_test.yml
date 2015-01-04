@@ -1,2 +1,2 @@
 parameters:
-    database_name: sitebeat_test
+    database_name: dbname_test
